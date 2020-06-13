@@ -1,6 +1,6 @@
 const path = require("path");
-const { resolveTsAliases } = require("resolve-ts-aliases");
 const Dotenv = require("dotenv-webpack");
+const { resolveTsAliases } = require("resolve-ts-aliases");
 
 module.exports = {
   plugins: [new Dotenv()],

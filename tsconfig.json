@@ -12,7 +12,5 @@
       "View/*": ["views/*"],
       "Web/*": ["www/*"]
     }
-  },
-  //   "include": ["./**"],
-  "exclude": ["./node_modules/"]
+  }
 }
