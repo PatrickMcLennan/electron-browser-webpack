@@ -10,7 +10,9 @@ module.exports = (_env, argv) => {
   const PROD = argv.mode.toString().toLowerCase() === `production`;
   return merge(common, {
     mode: PROD ? `production` : `development`,
-    entry: [path.resolve(__dirname, `www/index.ts`)],
+    entry: PROD
+      ? [path.resolve(__dirname, `www/index.ts`)]
+      : [`react-hot-loader/patch`, path.resolve(__dirname, `www/index.ts`)],
     output: {
       filename: PROD ? `app.[contenthash].js` : `app.js`,
       path: path.resolve(__dirname, `www/dist`),
@@ -19,6 +21,8 @@ module.exports = (_env, argv) => {
     devServer: {
       contentBase: path.resolve(__dirname, `www/dist`),
       historyApiFallback: true,
+      hot: true,
+      inline: true,
       open: true,
       port: 8080,
       stats: `minimal`,
@@ -28,7 +32,13 @@ module.exports = (_env, argv) => {
         {
           test: /\.(ts|tsx|js)$/,
           exclude: /(node_modules)/,
-          loader: PROD ? [`babel-loader`] : [`babel-loader`, `stylelint-custom-processor-loader`],
+          loader: PROD
+            ? [`babel-loader`]
+            : [
+                `react-hot-loader/webpack`,
+                `babel-loader`,
+                `stylelint-custom-processor-loader`,
+              ],
         },
       ],
     },
