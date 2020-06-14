@@ -7,7 +7,10 @@
     "watch:www": "webpack-dev-server --config ./webpack.www.js --mode development",
     "build:dev:www": "webpack --config ./webpack.www.js --mode development",
     "build:prod:www": "webpack --config ./webpack.www.js --mode production",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "watch:desktop": "npm run build:dev:desktop && electron ./desktop/electron.js",
+    "build:dev:desktop": "webpack --config ./webpack.desktop.js --mode development",
+    "build:prod:desktop": "webpack --config ./webpack.desktop.js --mode production"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +35,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "dotenv-webpack": "^1.8.0",
     "electron": "^9.0.4",
+    "electron-builder": "^22.7.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
     "eslint-plugin-better-styled-components": "^1.1.2",

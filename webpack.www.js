@@ -11,8 +11,8 @@ module.exports = (_env, argv) => {
   return merge(common, {
     mode: PROD ? `production` : `development`,
     entry: PROD
-      ? [path.resolve(__dirname, `www/index.ts`)]
-      : [`react-hot-loader/patch`, path.resolve(__dirname, `www/index.ts`)],
+      ? [path.resolve(__dirname, `index.ts`)]
+      : [`react-hot-loader/patch`, path.resolve(__dirname, `index.ts`)],
     output: {
       filename: PROD ? `app.[contenthash].js` : `app.js`,
       path: path.resolve(__dirname, `www/dist`),
