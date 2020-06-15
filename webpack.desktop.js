@@ -17,10 +17,10 @@ module.exports = (_env, argv) => {
       filename: `app.js`,
       path: path.resolve(__dirname, `desktop/dist`),
     },
-    target: `electron-renderer`,
+    target: `electron-main`,
     devtool: !PROD && `source-map`,
     devServer: {
-      contentBase: path.resolve(__dirname, `www/dist`),
+      contentBase: path.resolve(__dirname, `desktop/dist`),
       historyApiFallback: true,
       hot: true,
       inline: true,
@@ -56,7 +56,7 @@ module.exports = (_env, argv) => {
           new HtmlWebpackPlugin({
             filename: `index.html`,
             template: path.resolve(__dirname, `template.html`),
-            inject: PROD ? `head` : `body`,
+            inject: `head`,
           }),
           new CleanWebpackPlugin(),
           new ScriptExtHtmlWebpackPlugin({
@@ -67,7 +67,7 @@ module.exports = (_env, argv) => {
           new HtmlWebpackPlugin({
             filename: `index.html`,
             template: path.resolve(__dirname, `template.html`),
-            inject: PROD ? `head` : `body`,
+            inject: `body`,
           }),
         ],
   });

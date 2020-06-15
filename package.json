@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    }
+  },
   "scripts": {
     "watch:www": "webpack-dev-server --config ./webpack.www.js --mode development",
     "build:dev:www": "webpack --config ./webpack.www.js --mode development",
@@ -10,7 +16,8 @@
     "test": "jest --watchAll",
     "watch:desktop": "npm run build:dev:desktop && electron ./desktop/electron.js",
     "build:dev:desktop": "webpack --config ./webpack.desktop.js --mode development",
-    "build:prod:desktop": "webpack --config ./webpack.desktop.js --mode production"
+    "build:prod:desktop": "webpack --config ./webpack.desktop.js --mode production",
+    "build:targets:desktop": "npm run build:prod:desktop && electron-packager ./desktop/dist ./desktop/dist/electron_browser --all"
   },
   "keywords": [],
   "author": "",

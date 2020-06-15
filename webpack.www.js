@@ -55,7 +55,7 @@ module.exports = (_env, argv) => {
           new HtmlWebpackPlugin({
             filename: `index.[contenthash].html`,
             template: path.resolve(__dirname, `template.html`),
-            inject: PROD ? `head` : `body`,
+            inject: `head`,
           }),
           new CleanWebpackPlugin(),
           new ScriptExtHtmlWebpackPlugin({
@@ -66,7 +66,7 @@ module.exports = (_env, argv) => {
           new HtmlWebpackPlugin({
             filename: `index.html`,
             template: path.resolve(__dirname, `template.html`),
-            inject: PROD ? `head` : `body`,
+            inject: `body`,
           }),
         ],
   });

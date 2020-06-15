@@ -26,6 +26,6 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "better-styled-components"],
   rules: {
-    "no-use-before-define": ["error", { functions: false, classes: true, variables: true }],
+    // "no-use-before-define": ["error", { functions: false, classes: true, variables: true }],
   },
 };

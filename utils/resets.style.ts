@@ -38,4 +38,10 @@ export const theme: Object = {
     flex-direction: ${fd};
     flex-wrap: ${wrap};
   `,
+
+  /* Typography */
+  fontLine: (fontSize: string, lineHeight?: string) => css`
+    font-size: ${fontSize};
+    line-height: ${lineHeight ?? fontSize};
+  `,
 };
