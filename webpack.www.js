@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const common = require("./webpack.common");
 const merge = require("webpack-merge");
 const path = require("path");
@@ -37,6 +39,7 @@ module.exports = (_env, argv) => {
             : [
                 `react-hot-loader/webpack`,
                 `babel-loader`,
+                `eslint-loader`,
                 `stylelint-custom-processor-loader`,
               ],
         },

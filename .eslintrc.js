@@ -22,10 +22,15 @@ module.exports = {
     },
     ecmaVersion: 11,
     sourceType: "module",
-    // project: "./tsconfig.json",
+    project: "./tsconfig.json",
   },
   plugins: ["react", "@typescript-eslint", "better-styled-components"],
   rules: {
-    // "no-use-before-define": ["error", { functions: false, classes: true, variables: true }],
+    "@typescript-eslint/quotes": "off", // Use whatever quotes you want
+    "@typescript-eslint/no-inferrable-types": "off", // Inferrable types aren't bad
+    "@typescript-eslint/indent": "off", // Prettier will handle my styles
+    "comma-dangle": 0, // Trailing commas are useless
+    "max-len": 0, // Prettier will handle my styles
+    "import/prefer-default-export": "off", // I never use default exports in my .style.ts files
   },
 };

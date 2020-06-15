@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const HtmlWebpackPlugin = require(`html-webpack-plugin`);
 const { CleanWebpackPlugin } = require(`clean-webpack-plugin`);
 const TerserPlugin = require(`terser-webpack-plugin`);
@@ -38,6 +40,7 @@ module.exports = (_env, argv) => {
             : [
                 `react-hot-loader/webpack`,
                 `babel-loader`,
+                `eslint-loader`,
                 `stylelint-custom-processor-loader`,
               ],
         },

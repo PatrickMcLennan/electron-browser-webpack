@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 import React from "react";
 import { Router } from "react-router-dom";
 import { render, cleanup, RenderResult } from "@testing-library/react";

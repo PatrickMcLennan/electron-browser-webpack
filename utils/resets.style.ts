@@ -2,9 +2,13 @@ import {
   createGlobalStyle,
   css,
   GlobalStyleComponent,
+  DefaultTheme,
 } from "styled-components";
 
-export const GlobalStyles: GlobalStyleComponent<{}, {}> = createGlobalStyle`
+export const GlobalStyles: GlobalStyleComponent<
+  UnmappedObject,
+  DefaultTheme
+> = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -24,7 +28,7 @@ export const GlobalStyles: GlobalStyleComponent<{}, {}> = createGlobalStyle`
   }
 `;
 
-export const theme: Object = {
+export const theme: UnmappedObject = {
   /* Layout */
   flexin: (
     jc: string = `center`,
