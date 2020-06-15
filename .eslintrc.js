@@ -10,6 +10,7 @@ module.exports = {
     "airbnb-typescript",
     // "airbnb-hooks",
     "eslint:recommended",
+    "plugin:jsx-a11y/strict",
     "plugin:jest/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -31,6 +32,7 @@ module.exports = {
     "@typescript-eslint/indent": "off", // Prettier will handle my styles
     "comma-dangle": 0, // Trailing commas are useless
     "max-len": 0, // Prettier will handle my styles
+    "no-console": 0, // It is what it is
     "import/prefer-default-export": "off", // I never use default exports in my .style.ts files
   },
 };
